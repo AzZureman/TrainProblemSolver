@@ -40,7 +40,7 @@ public class Main extends Application {
         //scene.getStylesheets().add(getClass().getResource("TrainProblemSolver.css").toExternalForm());
 
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
     }
 
