@@ -9,50 +9,47 @@
 }
 
 #solverSelector {
-    -fx-background-radius: 5px;
-    -fx-text-fill: #F7F5FF;
-    -fx-prompt-text-fill: #F7F5FF;
+    -fx-background-radius: 10px;
     -fx-background-color: #2C3553;
     -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
-}
-
-#solverSelector  > * > .list-cell {
-    -fx-background-color: #2C3553;
-    -fx-text-fill: #F7F5FF;
 }
 
 #solverSelector:showing {
-    -fx-background-radius: 5px 5px 0 0;
+    -fx-background-radius: 10px 10px 0 0;
 }
 
-#solverSelector > * > .arrow-button {
-     -fx-background-color: #2C3553;
- }
-
-#solverSelector > * > .arrow {
-    -fx-background-color: #F7F5FF;
-}
-
-#solverSelector:hover > * > .arrow {
-    -fx-background-color: #458cff;
-}
-
-#solverSelector > * > .combo-box-popup {
-     -fx-background-color: #2C3553;
-     -fx-text-fill: #F7F5FF;
-     -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
- }
-
-#solverSelector > * > .list-view {
-    -fx-background-color: #2C3553;
+.combo-box .cell{
+    -fx-font: 14px "Ubuntu";
+    -fx-font-weight: bold;
     -fx-text-fill: #F7F5FF;
-    -fx-background-radius:  0 0 5px 5px;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+
+.combo-box .cell:hover{
+    -fx-text-fill: #458cff;
+}
+
+#solverSelector .list-view{
+    -fx-background-color: #2C3553;
+    -fx-background-radius:  0 0 10px 10px;
     -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
 }
 
-#solverSelector  > * > .list-view > .list-cell {
-    -fx-background-color: #2C3553;
-    -fx-text-fill: #F7F5FF;
+#solverSelector .list-cell{
+    -fx-background-color: transparent;
+}
+
+#solverSelector .arrow-button {
+    -fx-background-color: transparent;
+}
+
+#solverSelector .arrow {
+    -fx-background-color: #F7F5FF;
+}
+
+#solverSelector:hover .arrow {
+    -fx-background-color: #458cff;
 }
 
 #speedSelector {

@@ -60,6 +60,7 @@ public class Controller {
         speedSelector.setValue(DEFAULT_SPEED);
         speedSelector.setMax(MAX_SPEED);
         speedSelector.setMin(MIN_SPEED);
+        speedSelector.setMajorTickUnit((MAX_SPEED-MIN_SPEED)/5);
 
         runButton.setDisable(true);
         runButton.setOnAction(this::onRunButtonClick);
