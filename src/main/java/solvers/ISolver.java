@@ -1,5 +1,6 @@
-package Train;
+package solvers;
 
+import train.ICar;
 import javafx.util.Pair;
 import java.util.List;
 

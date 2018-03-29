@@ -1,1 +1,1 @@
-TrainProblemSolver
+trainProblemSolver

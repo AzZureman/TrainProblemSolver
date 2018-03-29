@@ -1,4 +1,4 @@
-#body {
+#root {
     -fx-background-color: #181F36;
             /*radial-gradient(focus-angle 90deg, focus-distance 0%, center 0% 25%, radius 110%, reflect, #3d486b, #2e3755 40%, #2e3755 75%, #262f49);*/
 }
@@ -11,6 +11,7 @@
 #solverSelector {
     -fx-background-radius: 5px;
     -fx-text-fill: #F7F5FF;
+    -fx-prompt-text-fill: #F7F5FF;
     -fx-background-color: #2C3553;
     -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
 }
@@ -99,8 +100,7 @@
 }
 
 .label {
-    -fx-font: "Ubuntu";
-    -fx-font-size: 14px;
+    -fx-font: 14px "Ubuntu";
     -fx-font-weight: bold;
     /*-fx-text-fill: #9eaacc;*/
     -fx-text-fill: #F7F5FF;
