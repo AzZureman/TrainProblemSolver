@@ -73,6 +73,7 @@ public class Controller {
 
         paramNameCol.setCellValueFactory(new PropertyValueFactory<>("Key"));
         paramValueCol.setCellValueFactory(new PropertyValueFactory<>("Value"));
+        ((TableColumn)paramTable.getColumns().get(0)).setStyle("-fx-border-width: 2px; -fx-border-color: transparent #333b56 transparent transparent");
 
         timeline.setOnFinished(e -> setTimer());
 

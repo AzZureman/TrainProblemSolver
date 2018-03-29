@@ -22,6 +22,7 @@
     -fx-font: 14px "Ubuntu";
     -fx-font-weight: bold;
     -fx-text-fill: #F7F5FF;
+    -fx-alignment: center;
     -fx-text-alignment: center;
     -fx-background-color: transparent;
 }
@@ -76,7 +77,7 @@
 .split-pane > .split-pane-divider {
     -fx-padding: 0;
     -fx-opacity: 0.3;
-    -fx-border-width: 1;
+    -fx-border-width: 1px;
     -fx-border-color: #111 #85889c #111 #111;
 }
 
@@ -84,22 +85,54 @@
     -fx-background-color: #222b47;
     -fx-background-radius: 15px;
     -fx-border-width: 0;
-    -fx-padding: 0;
+    -fx-padding: 0 0 10px 0;
     -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
 }
-.column-header-background{
+
+#paramTable .column-header-background {
     -fx-background-color: #1f2740;
     -fx-background-radius: 15px 15px 0 0;
 }
 
-.table-column {
+#paramTable .table-column {
     -fx-background-color: transparent;
 }
+
+#paramTable .table-cell {
+    -fx-font: 14px "Ubuntu";
+    -fx-font-weight: bold;
+    -fx-text-fill: #F7F5FF;
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+}
+
+#paramTable .table-row-cell{
+    -fx-background-color: transparent;
+}
+
+#paramTable .table-row-cell:even{
+    -fx-background-color: RGBA(69,140,255,0.05);
+}
+
+#paramTable .table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+#paramNameCol {
+    -fx-alignment: center-right;
+    -fx-padding: 0 20px;
+}
+
+#paramValueCol {
+    -fx-alignment: center-left;
+    -fx-padding: 0 20px;
+}
+
+
 
 .label {
     -fx-font: 14px "Ubuntu";
     -fx-font-weight: bold;
-    /*-fx-text-fill: #9eaacc;*/
     -fx-text-fill: #F7F5FF;
 }
 
