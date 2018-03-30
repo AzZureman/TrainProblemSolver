@@ -35,6 +35,9 @@ public class Controller {
     private boolean run = false;
 
     @FXML
+    protected Button resetButton;
+
+    @FXML
     private AnchorPane TrainViewContainer;
     private final TrainView trainView;
 
@@ -65,6 +68,9 @@ public class Controller {
         playButton.setDisable(true);
         playButton.setOnAction(this::onRunButtonClick);
 
+        resetButton.setDisable(true);
+        resetButton.setOnAction(this::onResetButtonClick);
+
         AnchorPane.setTopAnchor(trainView, 5.0);
         AnchorPane.setLeftAnchor(trainView, 5.0);
         AnchorPane.setBottomAnchor(trainView, 5.0);
@@ -84,6 +90,7 @@ public class Controller {
         solver.setTrain(trainView.getTrian());
         paramTable.setItems(FXCollections.observableArrayList(solver.getState()));
         playButton.setDisable(false);
+        resetButton.setDisable(false);
     }
 
     private void onRunButtonClick(Event event) {
@@ -91,9 +98,18 @@ public class Controller {
         else stop();
     }
 
+    private void onResetButtonClick(Event event) {
+        trainView.resetTrain();
+        trainView.redraw();
+        solver = Solver.getSolverByName((String)solverSelector.getValue());
+        solver.setTrain(trainView.getTrian());
+        paramTable.setItems(FXCollections.observableArrayList(solver.getState()));
+    }
+
     private void start() {
 //        playButton.textProperty().setValue("Stop");
         playButton.getStyleClass().add("pause");
+        resetButton.setDisable(true);
         solverSelector.setDisable(true);
         run = true;
         setTimer();
@@ -102,6 +118,7 @@ public class Controller {
     private void stop() {
 //        playButton.textProperty().setValue("Run");
         playButton.getStyleClass().remove("pause");
+        resetButton.setDisable(false);
         solverSelector.setDisable(false);
         run = false;
         timeline.stop();
