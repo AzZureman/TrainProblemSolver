@@ -2,6 +2,10 @@ package solvers;
 
 import java.util.*;
 
+//это же какой-то SolverContainer, SolverDispatcher, почему просто Solver?
+//+ я вы выделил в отдельный пакет от просто кучи солверов
+//+ feature request: что б он умел сам солверы подтягивать, достатончо было бы просто закоммитить
+// -- тут тебе либо городить велосипед, либо взять какую-нибудь DI-либу, DI-фреймворк - на спринге такое делается изи, но он огромный
 public final class Solver {
 
     private static final List<Class<? extends ISolver>> solverList = List.of(

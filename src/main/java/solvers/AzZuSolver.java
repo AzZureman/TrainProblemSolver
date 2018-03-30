@@ -36,7 +36,7 @@ public class AzZuSolver implements ISolver {
 
     @Override
     public int step() {
-        if (solved < 0){
+        if (solved < 0){  //тройной вложенный if - возможно, стоит попробовать разбить на подметоды (которые включают if'ы) - сложно читать
             if (!returning) {
                 if (steps < getDirectionSteps()) { //(!getDirectionChecked())
                     directionStep();
