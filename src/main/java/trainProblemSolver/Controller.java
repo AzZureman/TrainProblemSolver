@@ -111,7 +111,8 @@ public class Controller {
         timeline.getKeyFrames().clear();
         timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1/speedSelector.getValue()),null));
         timeline.play();
-        step();
+        step(); //я бы попробовал максимально модульно разделить отрисовку всего на форме, и проверку самого решения
+        //а то я сходу вообще не нашел, где у тебя решение проверяется
     }
 
     private void step() {
