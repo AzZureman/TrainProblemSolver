@@ -31,7 +31,7 @@ public class Controller {
     private final int DEFAULT_SPEED = 10;
 
     @FXML
-    protected Button runButton;
+    protected Button playButton;
     private boolean run = false;
 
     @FXML
@@ -62,8 +62,8 @@ public class Controller {
         speedSelector.setMin(MIN_SPEED);
         speedSelector.setMajorTickUnit((MAX_SPEED-MIN_SPEED)/5);
 
-        runButton.setDisable(true);
-        runButton.setOnAction(this::onRunButtonClick);
+        playButton.setDisable(true);
+        playButton.setOnAction(this::onRunButtonClick);
 
         AnchorPane.setTopAnchor(trainView, 5.0);
         AnchorPane.setLeftAnchor(trainView, 5.0);
@@ -83,7 +83,7 @@ public class Controller {
         solver = Solver.getSolverByName((String)solverSelector.getValue());
         solver.setTrain(trainView.getTrian());
         paramTable.setItems(FXCollections.observableArrayList(solver.getState()));
-        runButton.setDisable(false);
+        playButton.setDisable(false);
     }
 
     private void onRunButtonClick(Event event) {
@@ -92,14 +92,16 @@ public class Controller {
     }
 
     private void start() {
-        runButton.textProperty().setValue("Stop");
+//        playButton.textProperty().setValue("Stop");
+        playButton.getStyleClass().add("pause");
         solverSelector.setDisable(true);
         run = true;
         setTimer();
     }
 
     private void stop() {
-        runButton.textProperty().setValue("Run");
+//        playButton.textProperty().setValue("Run");
+        playButton.getStyleClass().remove("pause");
         solverSelector.setDisable(false);
         run = false;
         timeline.stop();

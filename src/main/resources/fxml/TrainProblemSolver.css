@@ -137,16 +137,32 @@
 }
 
 .button {
-     -fx-background-radius: 5px;
-     -fx-background-color: #2C3553;
-     -fx-text-fill: #F7F5FF;
-     -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
- }
-
-.button:hover {
-    -fx-text-fill: #458cff;
+    -fx-background-radius: 10px;
+    -fx-background-color: #2C3553;
+    -fx-text-fill: #F7F5FF;
+    -fx-effect: dropshadow(gaussian, #12172b, 10, 0.1, 2, 5);
+    -fx-padding: 0;
 }
 
 .button:pressed {
     -fx-effect: dropshadow(gaussian, #12172b, 5, 0.1, 1, 3);
 }
+
+#playButton .image-view {
+    -fx-image: url(../images/icon_play_white.png);
+    -fx-translate-x: 1;
+}
+
+#playButton:hover .image-view {
+    -fx-image: url(../images/icon_play_blue.png);
+}
+
+#playButton.pause .image-view {
+    -fx-image: url(../images/icon_pause_white.png);
+    -fx-translate-x: 0;
+}
+
+#playButton.pause:hover .image-view {
+    -fx-image: url(../images/icon_pause_blue.png);
+}
+
