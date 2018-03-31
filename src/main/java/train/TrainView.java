@@ -15,9 +15,9 @@ public class TrainView extends Canvas {
     private final Color CarOffColor = Color.web("#855df3");
     private final int LINE_WIDTH = 5;
 
-    public TrainView(){
+    public TrainView(Train train){
         super();
-        train = new Train();
+        this.train = train;
     }
 
     @Override public boolean isResizable() { return true; }
@@ -28,8 +28,8 @@ public class TrainView extends Canvas {
         redraw_(width, height);
     }
 
-    public void resetTrain() {
-        this.train = new Train();
+    public void setTrain(Train train) {
+        this.train = train;
     }
 
     public Train getTrian() {

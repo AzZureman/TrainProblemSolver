@@ -13,6 +13,7 @@ import javafx.util.Duration;
 import javafx.util.Pair;
 import solvers.ISolver;
 import solvers.Solver;
+import train.Train;
 import train.TrainView;
 
 
@@ -40,6 +41,7 @@ public class Controller {
     @FXML
     private AnchorPane TrainViewContainer;
     private final TrainView trainView;
+    private Train train;
 
     @FXML
     private TableView paramTable;
@@ -50,7 +52,8 @@ public class Controller {
 
 
     public Controller() {
-        trainView = new TrainView();
+        train = new Train();
+        trainView = new TrainView(train);
         timeline = new Timeline();
     }
 
@@ -99,7 +102,8 @@ public class Controller {
     }
 
     private void onResetButtonClick(Event event) {
-        trainView.resetTrain();
+        train = new Train();
+        trainView.setTrain(train);
         trainView.redraw();
         solver = Solver.getSolverByName((String)solverSelector.getValue());
         solver.setTrain(trainView.getTrian());
